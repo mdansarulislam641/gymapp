@@ -1,10 +1,14 @@
 import React from 'react';
-import HeroArea from './HeroArea';
+import LatestShop from '../LatestShop';
+import HeroArea from '../HeroArea';
+import Gallery from '../Gallery';
 
 const Home = () => {
     return (
         <div>
            <HeroArea></HeroArea>
+           <LatestShop></LatestShop>
+           <Gallery></Gallery>
         </div>
     );
 };
