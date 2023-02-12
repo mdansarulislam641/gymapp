@@ -37,8 +37,11 @@ const Navbar = () => {
                     </h2>
                 </div>
                 {/* nav menu items  */}
-                <div className={`flex transition-all absolute duration-700 flex-col md:flex-row ${showMenu ? " py-5 pl-10 top-[110px] left-0 w-96 bg-indigo-300 z-50" : "-left-[200px]  transition-all duration-700 top-[110px]"} gap-6`}>
+                <div className={`flex transition-all  duration-700 flex-col  ${showMenu ? "absolute py-5 pl-10 top-[110px] left-0 w-96 bg-indigo-300 z-50" : "-left-[200px]  transition-all absolute duration-700 top-[110px]"} gap-6`}>
                   {menuItem}
+                </div>
+                <div className='md:flex hidden gap-5 '>
+                {menuItem}
                 </div>
                 <div className='flex order-2 transition-all duration-100000 md:hidden gap-6'>
                 <AiOutlineBars onClick={()=>setShowMenu(!showMenu)} className={`cursor-pointer ${showMenu ? "hidden" : "block"}`} size={25}/>
