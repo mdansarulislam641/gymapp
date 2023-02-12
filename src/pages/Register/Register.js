@@ -73,20 +73,20 @@ const Register = () => {
                 <form onSubmit={handleRegisterSubmit}>
                     <div className='mt-8'>
                         <label htmlFor="firstName" className='font-semibold font-sans'>First name</label>
-                    <input onChange={(e)=>setFirstName(e.target.value)} className='w-full opacity-80 border mt-2 px-4 py-2  placeholder:text-black border-black' type="text" placeholder='Enter your first name' id="firstName" required/>
+                    <input onChange={(e)=>setFirstName(e.target.value)} className='w-full opacity-80 border mt-2 px-4 py-2  placeholder:text-black placeholder:opacity-75 font-serif  border-black' type="text" placeholder='Enter your first name' id="firstName" required/>
                     </div>
                   
                     <div className='mt-5'>
                         <label htmlFor="lastName" className='font-semibold font-sans'>Last name</label>
-                    <input onChange={(e)=>setLastName(e.target.value)} className='w-full opacity-80 border mt-2 px-4 py-2  placeholder:text-black text-black border-black' type="text" placeholder='Enter your last name' id="lastName" required/>
+                    <input onChange={(e)=>setLastName(e.target.value)} className='w-full placeholder:opacity-75 font-serif opacity-80 border mt-2 px-4 py-2  placeholder:text-black text-black border-black' type="text" placeholder='Enter your last name' id="lastName" required/>
                     </div>
                     <div className='my-6'>
                         <label htmlFor="email" className='font-semibold font-sans'>Email</label>
-                    <input onChange={(e)=>setEmail(e.target.value)} className='w-full border mt-2 px-4 py-2 opacity-80 placeholder:text-black border-black' type="email" placeholder='mdansarulislam@gmail.com' id="email" required/>
+                    <input onChange={(e)=>setEmail(e.target.value)} className='w-full placeholder:opacity-75 font-serif border mt-2 px-4 py-2 opacity-80 placeholder:text-black border-black' type="email" placeholder='mdansarulislam@gmail.com' id="email" required/>
                     </div>
                     <div>
                         <label htmlFor="password" className='font-semibold font-sans '>Password</label>
-                    <input onChange={(e)=>setPassword(e.target.value)} className='w-full border placeholder:text-black border-black px-4 py-1 placeholder:text-xl text-2xl mt-2  ' id='password' type="password" placeholder='********' required/>
+                    <input onChange={(e)=>setPassword(e.target.value)} className='w-full placeholder:opacity-75 font-serif border placeholder:text-black border-black px-4 py-1 placeholder:text-xl text-2xl mt-2  ' id='password' type="password" placeholder='********' required/>
                     </div>
                     {passwordError ?  <p className='text-red-600 font-bold flex items-center gap-2 ml-4'><span><VscError/></span>{passwordError}</p> : ""}
                    <div className='mt-10 flex gap-6 items-center'>

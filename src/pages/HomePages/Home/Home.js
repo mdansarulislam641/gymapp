@@ -1,5 +1,5 @@
 import React from 'react';
-import LatestShop from '../LatestShop';
+import LatestShop from '../LatestShop/LatestShop';
 import HeroArea from '../HeroArea';
 import Gallery from '../Gallery';
 

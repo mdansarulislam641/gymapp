@@ -15,13 +15,13 @@ const Gallery = () => {
                 {/* gallery title header */}
                 <div>
                 <h2 className='text-[#2554D7] text-xl default-font-use'>gallery</h2>
-                <h4 className='text-3xl md:text-4xl lg:text-[56px] text-[#FBECEB] mb-5 font-bold
+                <h4 className='text-3xl md:text-4xl lg:text-[56px] text-[#FBECEB] mb-10 mt-4 font-bold
 '>INSTAGRAM</h4>
                 </div>
                 {/* gallery image */}
-                <div className='grid grid-cols-5 gap-4'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4'>
                     {
-                        galleryImage.map((image , idx)=><img src={image}></img>)
+                        galleryImage.map((image , idx)=><img className='w-[90%] md:w-full mx-auto' key={idx} src={image}></img>)
                     }
                 </div>
                   {/* footer horizontal line */}

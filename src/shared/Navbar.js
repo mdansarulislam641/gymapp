@@ -1,13 +1,34 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import {BsSearch} from 'react-icons/bs';
 import {CiUser} from 'react-icons/ci';
-import {FiShoppingBag} from 'react-icons/fi';
+import {FiShoppingBag, FiLogOut} from 'react-icons/fi';
 import { HashLink } from 'react-router-hash-link';
 import {AiOutlineBars} from "react-icons/ai"
 import {RxCross2} from 'react-icons/rx';
+import { useUserContext } from '../contexts/AuthProvider/AuthProvider';
+import { toast } from 'react-hot-toast';
+
 const Navbar = () => {
+    // navbar search field hide and show state
     const [search, setSearch] = useState(false);
+    // get user and logout function from context
+    const {user, logOutCurrentUser} = useUserContext()
+    const navigate = useNavigate();
+    const handleLogOut = () =>{
+        // log out current user
+        logOutCurrentUser()
+        .then(()=>{
+            toast.success("successfully log out");
+            navigate('/');
+        })
+        .catch(e=>{
+            toast.error(e.message)
+        })
+    }
+    // this is for mobile responsive handle state
+    const [showMenu , setShowMenu] = useState(false);
+// navbar menu item
     const menuItem = <>
           <NavLink  onClick={()=>setShowMenu(false)} className={`${({ isActive }) =>
               isActive ? "bg-red-500" : undefined}  font-medium hover:text-[#2554D7] transition-all  duration-500`} to='/'>Home</NavLink>
@@ -17,8 +38,8 @@ const Navbar = () => {
                     <HashLink  onClick={()=>setShowMenu(false)} to="/#HashLink" className='font-medium hover:text-[#2554D7] transition-all duration-500' >Feature</HashLink>
                     <Link  onClick={()=>setShowMenu(false)} className='font-medium' to='/contact'>Contacts</Link>
     </>;
-    const [showMenu , setShowMenu] = useState(false);
-  console.log(showMenu)
+   
+  
     return (
         <nav className='mx-5 '>
             {/* nav top bar */}
@@ -33,7 +54,7 @@ const Navbar = () => {
                 {/* logo */}
                 <div className='lg:mr-16'>
                     <h2 className="text-[40px] font-bold">
-                        LOGO.
+                        <Link to="/">LOGO.</Link>
                     </h2>
                 </div>
                 {/* nav menu items  */}
@@ -55,7 +76,9 @@ const Navbar = () => {
             <input onBlur={()=>setSearch(false)} className={`border-2 rounded-full ${search ? "w-48" : "w-0 border-0"}`} type="search" />
             <BsSearch onClick={()=>setSearch(true)} className='cursor-pointer' size={23}/>
            </div>
-            <Link to="/login" title='login'>  <CiUser size={23}/></Link>
+           {
+            user?.email ?  <FiLogOut onClick={handleLogOut} className='cursor-pointer' title='log out' size={25}/> : <Link to="/login" title='login'>  <CiUser size={23}/></Link>
+           }
             <Link to="/dashboard/user-profile" title='users'><FiShoppingBag size={23}/></Link>
             </div>
            </div>

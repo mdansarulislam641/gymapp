@@ -33,11 +33,11 @@ const Login = () => {
                 <form onSubmit={handleLoginUser}>
                     <div >
                         <label htmlFor="email" className='font-semibold font-sans'>Email</label>
-                    <input onChange={(e)=>setEmail(e.target.value)} className='w-full border mt-2 px-4 py-2 placeholder:text-black border-black' type="email" placeholder='mdansarulislam@gmail.com' id="email" />
+                    <input onChange={(e)=>setEmail(e.target.value)} className='w-full placeholder:opacity-75 font-serif border mt-2 px-4 py-2 placeholder:text-black border-black' type="email" placeholder='mdansarulislam@gmail.com' id="email" />
                     </div>
                     <div className='mt-6'>
                         <label htmlFor="password" className='font-semibold font-sans '>Password</label>
-                    <input onChange={(e)=>setPassword(e.target.value)} className='w-full border placeholder:text-black border-black mt-2 px-4 py-2 opacity-50' id='password' type="password" placeholder='********' />
+                    <input onChange={(e)=>setPassword(e.target.value)} className='w-full placeholder:opacity-75 font-serif border placeholder:text-black border-black mt-2 px-4 py-2 opacity-50' id='password' type="password" placeholder='********' />
                     </div>
                    <div className='mt-10 flex gap-6 items-center'>
                    <button className='px-8 py-3 bg-[#2554D7] font-semibold text-white'>Login</button>

@@ -5,6 +5,8 @@ import AboutUs from "../pages/About/AboutUs";
 // import ContactUs from "../pages/ContactUs/ContactUs";
 import JoinUs from "../pages/ContactUs/JoinUs";
 import Home from "../pages/HomePages/Home/Home";
+import AllLatestShop from "../pages/HomePages/LatestShop/AllLatestShop";
+import LatestShopDetails from "../pages/HomePages/LatestShop/LatesShopDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ResetPassword from "../pages/ResetPassword/ResetPassword";
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
             {
                 path:'/contact',
                 element:<JoinUs></JoinUs>
+            },
+            {
+                path:'/all-shop',
+                element:<AllLatestShop></AllLatestShop>
+            },
+            {
+                path:'/shop/:id',
+                element:<LatestShopDetails></LatestShopDetails>
             }
         ]
     },

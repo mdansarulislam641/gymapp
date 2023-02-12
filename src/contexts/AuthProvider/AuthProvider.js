@@ -1,9 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword} from "firebase/auth";
+import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signOut} from "firebase/auth";
 import app from '../../firebase/firebase.config';
 const AUTH_CONTEXT = createContext();
 const AuthProvider = ({children}) => {
     const [user , setUser] = useState(null);
+    // its booking modal data send state 
+    const [modalData , setModalData] = useState({});
     // firebase auth
     const auth = getAuth(app)
     // for user registration
@@ -14,6 +16,15 @@ const AuthProvider = ({children}) => {
     const loginUser = (email , password) =>{
         return signInWithEmailAndPassword(auth,email ,password);
     }
+    // reset user password
+    const resetUserPassword = (email) =>{
+        return sendPasswordResetEmail(auth , email)
+    }
+
+    // sign out user
+    const logOutCurrentUser = () =>{
+        return signOut(auth);
+    }
 
     // users activity look
     useEffect(()=>{
@@ -22,12 +33,16 @@ const AuthProvider = ({children}) => {
         });
         return ()=> unSubscribe();
     },[])
+    // auth information for share anymore
     const authInfo = {
         user , 
+        modalData,
+        setModalData,
         createNewUser,
-        loginUser
+        loginUser,
+        logOutCurrentUser,
+        resetUserPassword
     }
-    console.log(user,"this is user")
     return (
         <AUTH_CONTEXT.Provider value={authInfo}>
             {children}

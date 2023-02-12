@@ -1,0 +1,28 @@
+[
+    {   "id":"1",
+        "name":"body pin",
+        "image": "https://i.ibb.co/w0Z3w4P/Rectangle-4-1.png",
+        "price":"230",
+        "description":"there are the main in the good this in the main our the goo thing to the body builder in the category of our the main in the circular ..."
+    },
+    
+    {   "id":"2",
+        "name":"body Chair",
+        "image": "https://i.ibb.co/T2r9ckR/Rectangle-4-2.png",
+        "price":"400",
+        "description":"there are the main in the good this in the main our the goo thing to the body builder in the category of our the main in the circular ..."
+    },
+    {   "id":"3",
+        "name":"body Bell",
+        "image": "https://i.ibb.co/L1CDpf6/Rectangle-4-3.png",
+        "price":"900",
+        "description":"there are the main in the good this in the main our the goo thing to the body builder in the category of our the main in the circular ..."
+    },
+    {   "id":"4",
+        "name":"body Rogue",
+        "image": "https://i.ibb.co/Yf7c4pG/Rectangle-4.png",
+        "price":"500",
+        "description":"there are the main in the good this in the main our the goo thing to the body builder in the category of our the main in the circular ..."
+    }
+
+]
