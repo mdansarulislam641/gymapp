@@ -4,13 +4,12 @@ import {GrTwitter} from "react-icons/gr";
 import {CiFacebook} from "react-icons/ci";
 const Footer = () => {
     return (
-        <footer className='py-20  bg-[#040F16]'>
-              {/* footer horizontal line */}
-              <hr className='max-w-[1300px] mx-auto text-white opacity-50' />
+        <footer className='py-10  bg-[#040F16]'>
+            
             {/* footer container */}
-            <div className='max-w-[1300px] my-12 mx-auto  flex gap-20 justify-between'>
+            <div className='max-w-[1300px] my-12 mx-auto  lg:flex gap-20 justify-between'>
                 {/* footer left */}
-                <div className='flex flex-1 justify-between gap-5'>
+                <div className='md:flex flex-1 justify-center md:justify-between gap-5'>
                     {/* left side 1st part */}
                     <div>
                     <h2 className="text-[40px] text-white font-bold">
@@ -45,7 +44,7 @@ const Footer = () => {
                     </div>
                 </div>
                 {/* footer right */}
-                <div className='flex-1 flex justify-between '>
+                <div className='flex-1 md:flex justify-between '>
                     {/* right side 1st part */}
                     <div>
                     <h2 className='text-white mt-1 text-xl font-semibold'>INFO</h2>

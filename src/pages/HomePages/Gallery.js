@@ -9,13 +9,13 @@ const Gallery = () => {
         "https://i.ibb.co/tZzYrJc/Rectangle-12.png"
     ]
     return (
-        <section className='mt-20 bg-[#040F16]'>
+        <section id='gallery' className='mt-20 bg-[#040F16]'>
             {/* gallery container */}
             <div className='max-w-[1300px] pt-20 text-center mx-auto'>
                 {/* gallery title header */}
                 <div>
                 <h2 className='text-[#2554D7] text-xl default-font-use'>gallery</h2>
-                <h4 className='text-[56px] text-[#FBECEB] mb-5 font-bold
+                <h4 className='text-3xl md:text-4xl lg:text-[56px] text-[#FBECEB] mb-5 font-bold
 '>INSTAGRAM</h4>
                 </div>
                 {/* gallery image */}
@@ -24,6 +24,8 @@ const Gallery = () => {
                         galleryImage.map((image , idx)=><img src={image}></img>)
                     }
                 </div>
+                  {/* footer horizontal line */}
+              <hr className='max-w-[1300px] mt-20 mx-auto text-white opacity-50' />
             </div>
         </section >
     );
