@@ -12,7 +12,7 @@ import { toast } from 'react-hot-toast';
 const Navbar = () => {
     // navbar search field hide and show state
     const [search, setSearch] = useState(false);
-    // get user and logout function from context
+    // get user and logout function from context using for better experience
     const {user, logOutCurrentUser} = useUserContext()
     const navigate = useNavigate();
     const handleLogOut = () =>{
